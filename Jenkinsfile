@@ -52,7 +52,7 @@ pipeline {
                     sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login --username ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
                     // Pushing Image to Docker Hub
                     sh "docker push ${IMAGE_TAG}"
-					echo "Successfully Push the Image to DcokerHub"
+					echo "Successfully Push the Image to DockerHub"
                 }
             }
         }
