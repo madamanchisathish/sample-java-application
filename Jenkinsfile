@@ -9,7 +9,7 @@ pipeline {
             }
         }
 		
-		stage('Maven Build and Test') {
+		stage('Maven Build and Generate Artifact') {
             steps {
                 script {
                     // Run Maven build and test
@@ -17,6 +17,15 @@ pipeline {
 					echo "Maven Build Successfully"
                 }
             }
+        }
+		
+		stage('SonarQube - Testing') {
+          steps {
+            sh "mvn sonar:sonar \
+            -Dsonar.projectKey=sample-app \
+            -Dsonar.host.url=http://18.222.25.49:9000 \
+            -Dsonar.login=dd859a7944049d3261946025f8455464a9db7ece"
+          }
         }
     }
 }
