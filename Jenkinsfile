@@ -50,6 +50,7 @@ pipeline {
                 script {
                     // Scan  Docker Image
                    sh "trivy image --exit-code 0 --no-progress ${IMAGE_TAG}"
+				   echo "Image scanning Successfully by using Trivy"
                 }
             }
         }
