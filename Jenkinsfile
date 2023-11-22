@@ -45,7 +45,7 @@ pipeline {
             }
         }
 		
-		stage('Push to Docker Hub') {
+		stage('Image Push to Docker Hub') {
             steps {
                 script {
                     // Login to Docker Hub
