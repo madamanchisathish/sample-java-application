@@ -5,6 +5,7 @@ pipeline {
         stage('GitHub Clone Repository') {
             steps {
                git branch: 'future', url: 'https://github.com/madamanchisathish/sample-java-application.git'
+			   echo "GitHub Repository Clone Successfully"
             }
         }
 		
@@ -13,6 +14,7 @@ pipeline {
                 script {
                     // Run Maven build and test
                     sh 'mvn clean package'
+					echo "Maven Build Successfully"
                 }
             }
         }
