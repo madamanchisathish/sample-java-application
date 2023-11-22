@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-               git branch: 'develop', url: 'https://github.com/madamanchisathish/sample-java-application.git'
+               git branch: 'future', url: 'https://github.com/madamanchisathish/sample-java-application.git'
             }
         }
     }
