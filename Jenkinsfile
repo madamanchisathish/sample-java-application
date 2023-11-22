@@ -4,13 +4,13 @@ pipeline {
     environment {
         // Define environment variables
         DOCKERHUB_CREDENTIALS = credentials('docker-hub-credentials') // ID of your Docker Hub credentials in Jenkins
-        IMAGE_TAG = "mahesh430/java-sample:latest" // Replace with your Docker Hub username and image name
+        IMAGE_TAG = "madamanchisathish/java-sample:latest" // Replace with your Docker Hub username and image name
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/mahesh430/sample-java-application.git'
+                git 'https://github.com/madamanchisathish/sample-java-application.git'
             }
         }
 
