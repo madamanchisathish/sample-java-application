@@ -4,7 +4,7 @@ pipeline {
 	environment {
         // Define environment variables
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials') // ID of your Docker Hub credentials in Jenkins
-        IMAGE_TAG = "madamanchisathish/java-sample:latest" // Replace with your Docker Hub username and image name
+        IMAGE_TAG = "madamanchisathish/java-sample-application:latest" // Replace with your Docker Hub username and image name
     }
 	
     stages {
@@ -28,9 +28,9 @@ pipeline {
 		stage('SonarQube - Testing') {
           steps {
             sh "mvn sonar:sonar \
-            -Dsonar.projectKey=sample-app \
+            -Dsonar.projectKey=sample-java-application \
             -Dsonar.host.url=http://sonarqube.infonxt.com:9000 \
-            -Dsonar.login=dd859a7944049d3261946025f8455464a9db7ece"
+            -Dsonar.login=fecd2bcf1943684466bac09c5767b8f202b549cb"
 			echo "SonarQube Testing Successfully"
           }
         }
